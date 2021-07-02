@@ -1,0 +1,66 @@
+<!--toggle-->
+<div>
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Tables</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+
+            <button ngbDropdownItem (click)="OverallDateDistribution()">Overall Distribution by Date</button>
+
+            <button ngbDropdownItem (click)="QualifiedSCDate()">qualification success rate by status</button>
+            <button ngbDropdownItem (click)="QualifiedSCRegion()">qualified successful rate by region</button>
+            <button ngbDropdownItem (click)="QualifiedSCSource()">qualified successful rate by source</button>
+
+            <button ngbDropdownItem (click)="StatusTrend()">trend on status</button>
+            <button ngbDropdownItem (click)="RegionTrend()">trend on regions</button>
+            <button ngbDropdownItem (click)="SourceTrend()">trend on sources</button>
+
+            <button ngbDropdownItem (click)="MsgSCDate()">message success rate by date</button>
+            <button ngbDropdownItem (click)="MsgSCSource()">message success rate by source</button>
+            <button ngbDropdownItem (click)="MsgSCRegion()">message success rate by region</button>
+
+            <button ngbDropdownItem (click)="BuyingProgramPipeline()">distribution of deals over CRM pipelines</button>
+            <button ngbDropdownItem (click)="BuyingProgramStage()">distribution of deals over stages</button>
+            <button ngbDropdownItem (click)="BuyingProgramPipeline()">distribution of deals over reasons</button>
+
+            <button ngbDropdownItem (click)="PurchasedDeals()">Purchased Deals</button>
+
+        </div>
+      
+      </div>
+</div>
+<!--text-->
+<div>
+  <div class="test">
+    <h1>{{text}}</h1>
+  </div>
+</div>
+<!--image-->
+<div>
+  <img [src]="imageToShow" class="my_image">
+</div>
+<!-- search -->
+<!-- <form class="filter">
+  <div class="form-group form-inline">
+      Full text search: <input class="form-control ml-2" type="text" [formControl]="filter"/>
+  </div>
+</form> -->
+
+<!--Table-->
+<div class="my_table">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" *ngFor="let header of tableHeader; index as i">{{header}}</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let line of tableData; index as i">
+      <td *ngFor="let data of line">
+            {{data}}
+      </td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+
